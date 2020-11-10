@@ -54,32 +54,21 @@ function getFinals(data){
 
 
 
-//     let finalsArray =[];
-//    fifaData.map(function(item){
-//         if (item.Stage.includes("Finals")){
-//            finalsArray.push(item);
-//        }
-//        return finalsArray;
-//    });
-
-
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
-function getYears(/* code here */) {
-    /* code here */
+function getYears(getFinalsCB, data){
 }
-
+console.log('TASK 3', getYears(getFinals, fifaData));
 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
+function getWinners() {
+    
 }
 
 
@@ -100,8 +89,11 @@ function getWinnersByYear(/* code here */) {
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
-function getAverageGoals(/* code here */) {
-   /* code here */
+function getAverageGoals(Data) {
+   const x = Data.reduce(function(acc//this has a built-in compounder. it adds on to itslef.
+    , item){
+
+   },0)
 }
 
 
