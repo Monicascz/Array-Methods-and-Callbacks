@@ -41,9 +41,27 @@ finals2014.filter(function(item){
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
-function getFinals(/* code here */) {
-   /* code here */
-}
+function getFinals(data){
+        let finals = [];
+        data.map(item => {
+           if (item.Stage === 'Final') {
+               finals.push(item)
+           }
+        })
+        return finals;
+    }
+    console.log(getFinals(fifaData));
+
+
+
+//     let finalsArray =[];
+//    fifaData.map(function(item){
+//         if (item.Stage.includes("Finals")){
+//            finalsArray.push(item);
+//        }
+//        return finalsArray;
+//    });
+
 
 
 
