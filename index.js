@@ -7,7 +7,7 @@ Investigate the data above. Practice accessing data by console.log-ing the follo
 const finals2014 = fifaData.filter(function(item){
     return item.Year === 2014 && item.Stage === 'Final';
 });
-console.log(finals2014);
+// console.log(finals2014);
 //(a) Home Team name for 2014 world cup final
 
  finals2014.forEach(function(item){
@@ -35,7 +35,7 @@ finals2014.filter(function(item){
         console.log(`${item["Home Team Name"]} won the World Cup Final.`)
     } else if (item["Home Team Goals"] < item["Away Team Goals"]){
         console.log(`${item["Away Team Name"]} won the World Cup Final.`)
-};
+}
 });
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -64,7 +64,7 @@ function getYears(getFinalsCB){
     })
     return years;
 }
-console.log('TASK 3', getYears(getFinals(fifaData)));
+// console.log('TASK 3', getYears(getFinals(fifaData)));
 
 
 
@@ -79,11 +79,10 @@ function getWinners(getFinals) {
         } 
         else {winners.push(item["Away Team Name"])
         }
-});
+    });
     return winners;
- 
 }
-console.log(getWinners(getFinals(fifaData)));
+// console.log(getWinners(getFinals(fifaData)));
 
 
 
@@ -96,19 +95,48 @@ Parameters:
  * callback function getYears
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
+// function getWinnersByYear(winners, years) {
+    
+// } console.log(getWinnersByYear(getWinners, getYears));
+
+
+// // function getWinnersByYear(){}
+// function getWinnersByYear(winners, years) {
+//     // winners(fifaData);
+//     let year = years(getFinals(fifaData));
+//     let countries = winners(getFinals(fifaData));
+//     // return countries;
+//     return countries.map(function(item, index) {
+//         return (`In ${year[index]}, ${item} won the world cup!`)
+//     });
+// }
+// console.log(getWinnersByYear(getWinners, getYears));
+
+function getWinnersByYear(data, getYearsCB, getWinnersCB){
+    let winners=[];
+    const YEAR = getYearsCB(data)
+    const WINNER= getWinnersCB(data)
+    WINNER.forEach(function(item,index){
+        // indexOf(item)
+        winners.push(`In ${YEAR[index]}, ${item} won the world cup!`)
+    })
+return winners;
 }
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
+// function getAverageGoals(){}
 function getAverageGoals(Data) {
-   const x = Data.reduce(function(acc//this has a built-in compounder. it adds on to itslef.
-    , item){
-
-   },0)
-}
+   const homeGoals = Data.reduce((accumulator, item)=>{
+       return accumulator + item["Home Team Goals"];
+   },0) / Data.length; 
+    const awayGoals = Data.reduce((accumulator, item)=>{
+       return accumulator + item["Away Team Goals"];
+    },0) /Data.length
+   return homeGoals + awayGoals;
+} console.log(getAverageGoals);
 
 
 
@@ -123,32 +151,32 @@ Create a function called `getCountryWins` that takes the parameters `data` and `
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
+// function getCountryWins(/* code here */) {
 
-    /* code here */
+//     /* code here */
 
-}
+// }
 
 
 
 /* 💪💪💪💪💪 Stretch 2: 💪💪💪💪💪 
 Write a function called getGoals() that accepts a parameter `data` and returns the team with the most goals score per appearance (average goals for) in the World Cup finals */
 
-function getGoals(/* code here */) {
+// function getGoals(/* code here */) {
 
-    /* code here */
+//     /* code here */
 
-}
+// }
 
 
 /* 💪💪💪💪💪 Stretch 3: 💪💪💪💪💪
 Write a function called badDefense() that accepts a parameter `data` and calculates the team with the most goals scored against them per appearance (average goals against) in the World Cup finals */
 
-function badDefense(/* code here */) {
+// function badDefense(/* code here */) {
 
-    /* code here */
+//     /* code here */
 
-}
+// }
 
 
 /* If you still have time, use the space below to work on any stretch goals of your chosing as listed in the README file. */
